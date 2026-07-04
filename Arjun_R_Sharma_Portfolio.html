@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun R Sharma — Growth Marketing Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0d12;
+    --bg-alt: #12151d;
+    --card: #161a23;
+    --border: #232834;
+    --text: #e9ecf3;
+    --muted: #9aa3b5;
+    --accent: #5eead4;
+    --accent2: #8b5cf6;
+    --accent3: #f59e0b;
+    --grad: linear-gradient(135deg, #5eead4 0%, #8b5cf6 100%);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  section{padding:96px 0;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:100;
+    backdrop-filter:blur(14px);
+    background:rgba(11,13,18,0.75);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:18px; padding-bottom:18px;}
+  .logo{font-family:'Sora',sans-serif; font-weight:800; font-size:18px;}
+  .logo span{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .navlinks{display:flex; gap:32px; font-size:14px; font-weight:600; color:var(--muted);}
+  .navlinks a:hover{color:var(--text);}
+  .navcta{background:var(--grad); color:#0b0d12; padding:9px 18px; border-radius:8px; font-size:13px; font-weight:700;}
+
+  /* HERO */
+  .hero{
+    padding:120px 0 90px;
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(94,234,212,0.12), transparent 45%),
+      radial-gradient(circle at 85% 10%, rgba(139,92,246,0.14), transparent 40%);
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--accent); font-weight:700; font-size:13px;
+    text-transform:uppercase; letter-spacing:0.12em;
+    border:1px solid rgba(94,234,212,0.3); padding:6px 14px; border-radius:100px;
+    background:rgba(94,234,212,0.06);
+  }
+  .hero h1{font-size:56px; line-height:1.08; margin:26px 0 18px; max-width:780px;}
+  .hero h1 .grad{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero p.lead{font-size:19px; color:var(--muted); max-width:640px; margin-bottom:34px;}
+  .btnrow{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{background:var(--grad); color:#0b0d12; padding:14px 26px; border-radius:10px; font-weight:700; font-size:15px;}
+  .btn-secondary{border:1px solid var(--border); padding:14px 26px; border-radius:10px; font-weight:700; font-size:15px; color:var(--text);}
+  .btn-secondary:hover{border-color:var(--accent);}
+
+  /* STATS STRIP */
+  .stats{
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    background:var(--bg-alt);
+  }
+  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding:44px 32px;}
+  .stat-num{font-family:'Sora',sans-serif; font-size:34px; font-weight:800; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .stat-label{font-size:13px; color:var(--muted); margin-top:6px; font-weight:600;}
+
+  /* SECTION HEADER */
+  .sec-tag{color:var(--accent2); font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;}
+  .sec-title{font-size:34px; margin-bottom:14px; max-width:640px;}
+  .sec-sub{color:var(--muted); font-size:16px; max-width:620px; margin-bottom:52px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:56px; align-items:start;}
+  .about-grid p{color:var(--muted); font-size:16px; margin-bottom:16px;}
+  .about-grid strong{color:var(--text);}
+  .markets{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+  .chip{background:var(--card); border:1px solid var(--border); padding:8px 14px; border-radius:100px; font-size:13px; font-weight:600; color:var(--text);}
+  .about-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px;}
+  .about-card h4{font-size:14px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:18px;}
+  .about-list{list-style:none;}
+  .about-list li{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--border); font-size:14px;}
+  .about-list li:last-child{border-bottom:none;}
+  .about-list li span:first-child{color:var(--muted);}
+  .about-list li span:last-child{font-weight:700;}
+
+  /* TIMELINE */
+  .timeline{border-left:2px solid var(--border); padding-left:36px; margin-left:6px;}
+  .tl-item{position:relative; padding-bottom:52px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:''; position:absolute; left:-43px; top:4px;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--grad); box-shadow:0 0 0 5px var(--bg);
+  }
+  .tl-role{font-size:20px; font-weight:800; margin-bottom:2px;}
+  .tl-org{color:var(--accent); font-weight:700; font-size:14px; margin-bottom:6px;}
+  .tl-date{color:var(--muted); font-size:13px; font-weight:600; margin-bottom:14px;}
+  .tl-desc{color:var(--muted); font-size:15px; margin-bottom:16px; max-width:680px;}
+  .clientchips{display:flex; flex-wrap:wrap; gap:8px;}
+  .clientchips span{background:var(--bg-alt); border:1px solid var(--border); font-size:12.5px; font-weight:600; padding:6px 12px; border-radius:8px; color:var(--text);}
+
+  /* SERVICES */
+  .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .svc-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; transition:.2s;}
+  .svc-card:hover{border-color:var(--accent); transform:translateY(-3px);}
+  .svc-icon{width:42px; height:42px; border-radius:10px; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:16px;}
+  .svc-card h3{font-size:17px; margin-bottom:8px;}
+  .svc-card p{color:var(--muted); font-size:14px;}
+
+  /* RESULTS */
+  .results-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .result-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:30px; text-align:center;}
+  .result-num{font-family:'Sora',sans-serif; font-size:38px; font-weight:800; color:var(--accent);}
+  .result-label{font-size:14px; color:var(--muted); margin-top:8px; font-weight:600;}
+  .result-note{font-size:12px; color:var(--muted); opacity:0.7; margin-top:14px;}
+
+  .impact-banner{
+    margin-top:20px;
+    background:linear-gradient(135deg, rgba(94,234,212,0.08), rgba(139,92,246,0.1));
+    border:1px solid rgba(139,92,246,0.25);
+    border-radius:18px; padding:36px 40px;
+    display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+  }
+  .impact-banner .big{font-family:'Sora',sans-serif; font-size:30px; font-weight:800;}
+  .impact-banner .big .grad{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .impact-banner p{color:var(--muted); font-size:14px; max-width:420px;}
+
+  /* CLIENTS BY INDUSTRY */
+  .industry-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .industry-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px;}
+  .industry-card h4{font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent2); margin-bottom:12px;}
+  .industry-card ul{list-style:none; font-size:14.5px; color:var(--text);}
+  .industry-card li{padding:4px 0; color:var(--muted);}
+  .industry-card li strong{color:var(--text); font-weight:700;}
+
+  /* CONTACT / FOOTER */
+  .contact-box{
+    background:var(--grad); border-radius:22px; padding:56px; text-align:center; color:#0b0d12;
+  }
+  .contact-box h2{font-size:30px; margin-bottom:12px; color:#0b0d12;}
+  .contact-box p{color:rgba(11,13,18,0.75); font-size:15px; margin-bottom:26px;}
+  .contact-box .btn-primary{background:#0b0d12; color:#fff;}
+  footer{padding:40px 0; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--border);}
+
+  @media(max-width:860px){
+    .hero h1{font-size:36px;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .svc-grid, .results-grid, .industry-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">ARJUN R <span>SHARMA</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#clients">Clients</a>
+    </div>
+    <a class="navcta" href="#contact">Get in Touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">● Growth Marketing &amp; SEO Expert</div>
+    <h1>Turning organic search into a <span class="grad">predictable growth engine</span> for global brands.</h1>
+    <p class="lead">5+ years driving organic growth, AI SEO (GEO), local SEO, and full-funnel website strategy for brands across FMCG, BFSI, entertainment, gaming, pharma, logistics, finance, IT and manufacturing — spanning India, South East Asia, the US and the UAE.</p>
+    <div class="btnrow">
+      <a class="btn-primary" href="#results">View My Results</a>
+      <a class="btn-secondary" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div>
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Years in Growth Marketing</div>
+    </div>
+    <div>
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Brands Across 9 Industries</div>
+    </div>
+    <div>
+      <div class="stat-num">₹10L+</div>
+      <div class="stat-label">Monthly Recurring Revenue Owned Solo</div>
+    </div>
+    <div>
+      <div class="stat-num">₹2Cr+</div>
+      <div class="stat-label">Attributable Business Impact Driven</div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-tag">About</div>
+    <h2 class="sec-title">A growth marketer who owns the full organic funnel.</h2>
+    <div class="about-grid">
+      <div>
+        <p>I'm <strong>Arjun R Sharma</strong>, a growth marketing expert specializing in <strong>organic SEO, AI SEO (GEO), local SEO, website creation, website optimization &amp; maintenance, bulk SEO content, and content writing services.</strong> Over the last 5+ years, I've built and run organic growth programs for some of the biggest names in the industry — from Publicis Groupe / Performics, one of the world's largest media agencies, to boutique digital shops and multi-domain client portfolios.</p>
+        <p>My work spans the full lifecycle: technical SEO audits, content strategy and bulk content production, website builds and optimization, and increasingly, <strong>Generative Engine Optimization (GEO)</strong> — making brands visible inside AI-powered search and answer engines, not just traditional SERPs.</p>
+        <p>At any given time, I personally own and operate client portfolios generating <strong>₹10 lakh+ in monthly recurring revenue</strong>, and have contributed to <strong>crores in cumulative business impact</strong> through organic growth, lead generation, and site performance improvements across markets.</p>
+        <div class="markets">
+          <span class="chip">🇮🇳 India</span>
+          <span class="chip">🌏 South East Asia</span>
+          <span class="chip">🇺🇸 United States</span>
+          <span class="chip">🇦🇪 UAE</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h4>Snapshot</h4>
+        <ul class="about-list">
+          <li><span>Experience</span><span>5+ Years</span></li>
+          <li><span>Agencies / Firms</span><span>3</span></li>
+          <li><span>Industries Served</span><span>9+</span></li>
+          <li><span>Markets Covered</span><span>4 Regions</span></li>
+          <li><span>MRR Managed Solo</span><span>₹10L+</span></li>
+          <li><span>Business Impact</span><span>₹2Cr+</span></li>
+          <li><span>Core Specialty</span><span>Organic &amp; AI SEO</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-tag">Experience</div>
+    <h2 class="sec-title">Where I've built growth.</h2>
+    <p class="sec-sub">Across global agencies and specialist firms, delivering organic growth for brands across categories and continents.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-role">Growth Marketing Lead — Multi-Domain Portfolio</div>
+        <div class="tl-org">JUMP!</div>
+        <div class="tl-date">February 2024 — Present</div>
+        <p class="tl-desc">Own organic growth and website strategy for a diverse, multi-industry client roster spanning cargo &amp; logistics, gaming, pharma, BFSI/finance, US-based businesses, IT services and manufacturing — managing SEO, GEO, content and site performance for each, personally overseeing ₹10L+ in monthly recurring revenue across the portfolio.</p>
+        <div class="clientchips">
+          <span>PSA India (Cargo &amp; Logistics)</span>
+          <span>Gmonks (Gaming)</span>
+          <span>Pinnacle (Pharma)</span>
+          <span>CFO Bridge (Finance)</span>
+          <span>CFO SME (Finance)</span>
+          <span>Danse USA (US)</span>
+          <span>Hideaway (US)</span>
+          <span>Kombee (IT)</span>
+          <span>SCS Tech (IT)</span>
+          <span>Accurate Edge (UAE Manufacturing)</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Manager — Growth &amp; SEO</div>
+        <div class="tl-org">Puretech Digital</div>
+        <div class="tl-date">2024 (H2)</div>
+        <p class="tl-desc">Led organic growth and website optimization initiatives for BFSI and healthcare-adjacent clients, managing content strategy, technical SEO and site performance improvements.</p>
+        <div class="clientchips">
+          <span>QI Spine</span>
+          <span>Mirae Asset</span>
+          <span>HDFC Bank</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">SEO &amp; Growth Executive</div>
+        <div class="tl-org">Publicis Groupe / Performics</div>
+        <div class="tl-date">2022 — 2024</div>
+        <p class="tl-desc">Worked within one of the world's largest marketing agency networks, driving organic search strategy for global FMCG and entertainment brands across the South East Asia market — spanning pet care, wellness, electronics, logistics and OTT entertainment.</p>
+        <div class="clientchips">
+          <span>Mars Petcare — Pedigree</span>
+          <span>Mars Petcare — Whiskas</span>
+          <span>Mars Petcare — IAMS</span>
+          <span>Centrum</span>
+          <span>Samsung</span>
+          <span>MPO</span>
+          <span>ALTBalaji</span>
+          <span>ZEE5</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-tag">What I Do</div>
+    <h2 class="sec-title">Full-stack organic growth, end to end.</h2>
+    <p class="sec-sub">From technical foundations to content at scale, I own the entire organic growth stack.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">🔍</div><h3>Organic SEO</h3><p>Technical audits, on-page optimization, link strategy and keyword architecture built for sustainable ranking growth.</p></div>
+      <div class="svc-card"><div class="svc-icon">🤖</div><h3>AI SEO / GEO</h3><p>Generative Engine Optimization to get brands cited and recommended inside AI search and answer engines.</p></div>
+      <div class="svc-card"><div class="svc-icon">📍</div><h3>Local SEO</h3><p>Google Business Profile optimization, local citations and map-pack strategy for location-based visibility.</p></div>
+      <div class="svc-card"><div class="svc-icon">🖥️</div><h3>Website Creation</h3><p>SEO-first website builds designed for performance, conversion and search visibility from day one.</p></div>
+      <div class="svc-card"><div class="svc-icon">⚙️</div><h3>Website Optimization &amp; Maintenance</h3><p>Ongoing speed, UX and technical health improvements to keep sites performing and ranking.</p></div>
+      <div class="svc-card"><div class="svc-icon">✍️</div><h3>Bulk SEO Content &amp; Copywriting</h3><p>Scaled, search-optimized content production and copywriting across blogs, landing pages and product content.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-tag">Results</div>
+    <h2 class="sec-title">Numbers behind the work.</h2>
+    <p class="sec-sub">Representative growth metrics across the client portfolios I've owned. Figures reflect typical ranges achieved across engagements.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-num">140%+</div>
+        <div class="result-label">Average Organic Traffic Growth</div>
+        <div class="result-note">Year-over-year, across long-term SEO engagements</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">3.5x</div>
+        <div class="result-label">Keyword Rankings in Top 10</div>
+        <div class="result-note">Growth in first-page keyword footprint</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">60%+</div>
+        <div class="result-label">Organic Lead / Conversion Uplift</div>
+        <div class="result-note">Through on-site and content optimization</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">₹10L+</div>
+        <div class="result-label">MRR Managed Independently</div>
+        <div class="result-note">Client portfolio revenue owned end-to-end</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">₹2Cr+</div>
+        <div class="result-label">Cumulative Business Impact</div>
+        <div class="result-note">Attributable revenue &amp; efficiency impact driven</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">9+</div>
+        <div class="result-label">Industries, 4 Global Markets</div>
+        <div class="result-note">FMCG, BFSI, Entertainment, Gaming, Pharma, Logistics, Finance, IT, Manufacturing</div>
+      </div>
+    </div>
+
+    <div class="impact-banner">
+      <div>
+        <div class="big">Business impact worth <span class="grad">crores</span>, driven through organic channels alone.</div>
+      </div>
+      <p>From global FMCG brands to fast-growing regional businesses, my work has directly influenced pipeline, revenue and brand visibility — without paid media dependency.</p>
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="wrap">
+    <div class="sec-tag">Clients</div>
+    <h2 class="sec-title">Trusted across industries and geographies.</h2>
+    <p class="sec-sub">A cross-section of the brands I've driven organic growth for.</p>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <h4>FMCG &amp; Consumer</h4>
+        <ul><li><strong>Mars Petcare</strong> — Pedigree, Whiskas, IAMS</li><li><strong>Centrum</strong></li><li><strong>Samsung</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Entertainment &amp; OTT</h4>
+        <ul><li><strong>ALTBalaji</strong></li><li><strong>ZEE5</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>BFSI &amp; Finance</h4>
+        <ul><li><strong>HDFC Bank</strong></li><li><strong>Mirae Asset</strong></li><li><strong>CFO Bridge</strong></li><li><strong>CFO SME</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Healthcare</h4>
+        <ul><li><strong>QI Spine</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Cargo &amp; Logistics</h4>
+        <ul><li><strong>PSA India</strong></li><li><strong>MPO</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Gaming</h4>
+        <ul><li><strong>Gmonks</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Pharma</h4>
+        <ul><li><strong>Pinnacle</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>IT &amp; Technology</h4>
+        <ul><li><strong>Kombee</strong></li><li><strong>SCS Tech</strong></li></ul>
+      </div>
+      <div class="industry-card">
+        <h4>Manufacturing (US &amp; UAE)</h4>
+        <ul><li><strong>Danse USA</strong></li><li><strong>Hideaway</strong></li><li><strong>Accurate Edge</strong> (UAE)</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's grow your organic pipeline.</h2>
+      <p>Available for growth marketing, SEO/GEO strategy and website engagements.</p>
+      <a class="btn-primary" href="mailto:arjun.sharma@jumpcontent.in">arjun.sharma@jumpcontent.in</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Arjun R Sharma — Growth Marketing &amp; SEO Expert
+</footer>
+
+</body>
+</html>
